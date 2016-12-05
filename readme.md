@@ -34,13 +34,13 @@ in order to do that:
 
 1. Clone this repository in your project root folder,
 2. In the build.gradle inside your 'app' folder, add:
-
+```java
     dependencies {
         compile fileTree(include: ['*.aar'], dir: 'witsdk')
         ...
         compile project(':witsdk')
     }
-
+```
 3. Inside your settings.gradle add ':witsdk', the file should look like:
 
     include ':app',':witsdk'
