@@ -59,6 +59,7 @@ in order to do that:
     String method = "patch";
     final Activity activity = this;
 ´´´
+
 ### Initialize WIT and do the Request
 
     Wit client = new Wit(this);
