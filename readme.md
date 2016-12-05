@@ -58,7 +58,7 @@ in order to do that:
     String url = "http://jsonplaceholder.typicsode.com/posts/1";
     String method = "patch";
     final Activity activity = this;
-´´´
+```
 
 ### Initialize WIT and do the Request
 
