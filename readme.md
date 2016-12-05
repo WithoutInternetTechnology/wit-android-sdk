@@ -33,12 +33,14 @@ in order to do that:
 ### Setup WIT SDK using Gradle
 
 1. Clone this repository in your project root folder,
-2. In the build.gradle inside your 'app' folder, add:
+2. In the build.gradle inside your 'app' folder, add WIT SDK and okHttp3:
 
 ```java
     dependencies {
         compile fileTree(include: ['*.aar'], dir: 'witsdk')
+ 
         ...
+        compile 'com.squareup.okhttp3:okhttp:3.4.2'
         compile project(':witsdk')
     }
 ```
