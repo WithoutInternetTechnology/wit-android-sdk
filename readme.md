@@ -14,7 +14,7 @@ Official WIT Android SDK to support:
 ### Setup WIT SDK using Android Studio
 The easiest way to install WIT SDK is to use the Android Studio Module import section,
 in order to do that:
-
+```
 1) Go to File>New>New Module
 2) Select "Import .JAR/.AAR Package" and click next.
 3) Enter the path to .aar file and click finish.
@@ -24,6 +24,7 @@ in order to do that:
 7) Click the green "+" in the upper right corner.
 8) Select "Module Dependency"
 9) Select the new module from the list.
+```
 
 ### Setup WIT SDK using Gradle
 
