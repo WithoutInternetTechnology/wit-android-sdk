@@ -62,6 +62,7 @@ in order to do that:
 
 ### Initialize WIT and do the Request
 
+```java
     Wit client = new Wit(this);
 
     client.request(url, method, obj, activity, new RequestListener() {
@@ -75,13 +76,13 @@ in order to do that:
         Log.d("WIT REQ","ERROR "+ code +" : " + error);
       }
     });
-
+```
 ## Examples
 
 Here some example to get you started on the WIT Android SDK.
 
 ### GET Request
-
+```java
             client.request(url, "get", null, activity, new RequestListener() {
                 @Override
                 public void onSuccess(JSONObject json, Integer id) {
@@ -93,9 +94,10 @@ Here some example to get you started on the WIT Android SDK.
                     Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
                 }
             });
+```
 
 ### POST Request
-
+```java
             client.request("http://jsonplaceholder.typicode.com/posts", "post", obj, activity, new RequestListener() {
                 @Override
                 public void onSuccess(JSONObject json, Integer id) {
@@ -107,9 +109,9 @@ Here some example to get you started on the WIT Android SDK.
                     Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
                 }
             });
-
+```
 ### PUT Request
-
+```java
             client.request(url, "put", obj, activity, new RequestListener() {
                 @Override
                 public void onSuccess(JSONObject json, Integer id) {
@@ -121,9 +123,9 @@ Here some example to get you started on the WIT Android SDK.
                     Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
                 }
             });
-
+```
 ### PATCH Request
-
+```java
             client.request(url, "patch", obj, activity, new RequestListener() {
                 @Override
                 public void onSuccess(JSONObject json, Integer id) {
@@ -135,9 +137,9 @@ Here some example to get you started on the WIT Android SDK.
                     Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
                 }
             });
-
+```
 ### DELETE Request
-
+```java
             client.request(url, "delete", null, activity, new RequestListener() {
                 @Override
                 public void onSuccess(JSONObject json, Integer id) {
@@ -149,7 +151,7 @@ Here some example to get you started on the WIT Android SDK.
                     Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
                 }
             });
-
+```
 
 ### License
 
