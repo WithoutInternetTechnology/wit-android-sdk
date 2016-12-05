@@ -7,9 +7,10 @@ Using WIT SDK you can do any kind of HTTP Requests.
 If the device is offline, the SMS Channel will be used.
 
 Official WIT Android SDK to support:
-    - Internet backed HTTP Requests based on okHTTP
-    - Offline HTTP Requests via WIT Fallback on SMS
-    - Android 5 and 6
+
+- Internet backed HTTP Requests based on okHTTP
+- Offline HTTP Requests via WIT Fallback on SMS
+- Android 5 and 6
 
 ## Install
 
