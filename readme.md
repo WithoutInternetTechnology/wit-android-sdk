@@ -14,17 +14,17 @@ Official WIT Android SDK to support:
 ### Setup WIT SDK using Android Studio
 The easiest way to install WIT SDK is to use the Android Studio Module import section,
 in order to do that:
-```
-1) Go to File>New>New Module
-2) Select "Import .JAR/.AAR Package" and click next.
-3) Enter the path to .aar file and click finish.
-4) Go to File>Project Settings (Ctrl+Shift+Alt+S).
-5) Under "Modules," in left menu, select "app."
-6) Go to "Dependencies tab.
-7) Click the green "+" in the upper right corner.
-8) Select "Module Dependency"
-9) Select the new module from the list.
-```
+
+- Go to File>New>New Module
+- Select "Import .JAR/.AAR Package" and click next.
+- Enter the path to .aar file and click finish.
+- Go to File>Project Settings (Ctrl+Shift+Alt+S).
+- Under "Modules," in left menu, select "app."
+- Go to "Dependencies tab.
+- Click the green "+" in the upper right corner.
+- Select "Module Dependency"
+- Select the new module from the list.
+
 
 ### Setup WIT SDK using Gradle
 
@@ -48,7 +48,7 @@ in order to do that:
     import com.witsdk.witcore.Wit;
 
 ### Initialize variables
-
+```java
     JSONObject obj = new JSONObject();
     obj.put("id", 1);
     obj.put("title", "foo");
@@ -58,7 +58,7 @@ in order to do that:
     String url = "http://jsonplaceholder.typicsode.com/posts/1";
     String method = "patch";
     final Activity activity = this;
-
+´´´
 ### Initialize WIT and do the Request
 
     Wit client = new Wit(this);
