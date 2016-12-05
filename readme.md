@@ -83,74 +83,74 @@ Here some example to get you started on the WIT Android SDK.
 
 ### GET Request
 ```java
-            client.request(url, "get", null, activity, new RequestListener() {
-                @Override
-                public void onSuccess(JSONObject json, Integer id) {
-                    Log.d("WIT SDK","GET REQUEST, Response: "+ id.toString() +" : " + json.toString());
-                }
+    client.request(url, "get", null, activity, new RequestListener() {
+        @Override
+        public void onSuccess(JSONObject json, Integer id) {
+            Log.d("WIT SDK","GET REQUEST, Response: "+ id.toString() +" : " + json.toString());
+        }
 
-                @Override
-                public void onError(int code, String error) {
-                    Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
-                }
-            });
+        @Override
+        public void onError(int code, String error) {
+            Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
+        }
+    });
 ```
 
 ### POST Request
 ```java
-            client.request("http://jsonplaceholder.typicode.com/posts", "post", obj, activity, new RequestListener() {
-                @Override
-                public void onSuccess(JSONObject json, Integer id) {
-                    Log.d("WIT SDK","GET REQUEST, Response: "+ id.toString() +" : " + json.toString());
-                }
+    client.request("http://jsonplaceholder.typicode.com/posts", "post", obj, activity, new RequestListener() {
+        @Override
+        public void onSuccess(JSONObject json, Integer id) {
+            Log.d("WIT SDK","GET REQUEST, Response: "+ id.toString() +" : " + json.toString());
+        }
 
-                @Override
-                public void onError(int code, String error) {
-                    Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
-                }
-            });
+        @Override
+        public void onError(int code, String error) {
+            Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
+        }
+    });
 ```
 ### PUT Request
 ```java
-            client.request(url, "put", obj, activity, new RequestListener() {
-                @Override
-                public void onSuccess(JSONObject json, Integer id) {
-                    Log.d("WIT SDK","GET REQUEST, Response: "+ id.toString() +" : " + json.toString());
-                }
+    client.request(url, "put", obj, activity, new RequestListener() {
+        @Override
+        public void onSuccess(JSONObject json, Integer id) {
+            Log.d("WIT SDK","GET REQUEST, Response: "+ id.toString() +" : " + json.toString());
+        }
 
-                @Override
-                public void onError(int code, String error) {
-                    Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
-                }
-            });
+        @Override
+        public void onError(int code, String error) {
+            Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
+        }
+    });
 ```
 ### PATCH Request
 ```java
-            client.request(url, "patch", obj, activity, new RequestListener() {
-                @Override
-                public void onSuccess(JSONObject json, Integer id) {
-                    Log.d("WIT SDK","GET REQUEST, Response: "+ id.toString() +" : " + json.toString());
-                }
+    client.request(url, "patch", obj, activity, new RequestListener() {
+        @Override
+        public void onSuccess(JSONObject json, Integer id) {
+            Log.d("WIT SDK","GET REQUEST, Response: "+ id.toString() +" : " + json.toString());
+        }
 
-                @Override
-                public void onError(int code, String error) {
-                    Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
-                }
-            });
+        @Override
+        public void onError(int code, String error) {
+            Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
+        }
+    });
 ```
 ### DELETE Request
 ```java
-            client.request(url, "delete", null, activity, new RequestListener() {
-                @Override
-                public void onSuccess(JSONObject json, Integer id) {
-                    Log.d("WIT SDK","GET REQUEST, Response: "+ id.toString() +" : " + json.toString());
-                }
+    client.request(url, "delete", null, activity, new RequestListener() {
+        @Override
+        public void onSuccess(JSONObject json, Integer id) {
+            Log.d("WIT SDK","GET REQUEST, Response: "+ id.toString() +" : " + json.toString());
+        }
 
-                @Override
-                public void onError(int code, String error) {
-                    Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
-                }
-            });
+        @Override
+        public void onError(int code, String error) {
+            Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
+        }
+    });
 ```
 
 ### License
