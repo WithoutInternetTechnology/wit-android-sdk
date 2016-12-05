@@ -1,3 +1,5 @@
+![alt tag](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+
 # WIT Android SDK alpha 0.1.0
 
 WIT Android SDK is a library to give fallback connectivity to mobile Apps.
