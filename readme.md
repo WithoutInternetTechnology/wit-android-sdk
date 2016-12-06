@@ -1,6 +1,14 @@
 ![alt tag](https://raw.githubusercontent.com/WithoutInternetTechnology/wit-android-sdk/master/android-sdk%20banner.png)
 
-# WIT Android SDK alpha 0.1.0
+# WIT Android SDK *alpha* 0.1.0
+
+*Please be patient :) this is a very early SDK*
+
+## Issues
+
+Use Github Issues to file bugs and weird problems.
+
+# WIT Android SDK
 
 WIT Android SDK is a library to give fallback connectivity to mobile Apps.
 Using WIT SDK you can do any kind of HTTP Requests.
