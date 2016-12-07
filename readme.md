@@ -22,7 +22,7 @@ in a big payload being sent via SMS.
 Our system take care of compressing and optimizing the request you are doing.
 
 Here at [WIT Technology](https://www.witsdk.com) we offer a premium support to any company.
-We can optimize up to 50% the speed of the requests and as a consequence the prices for the data transportation.
+We can optimize up to 70% the speed of the requests and as a consequence the prices for the data transportation.
 Your endpoints will remain the same so you don't have to modify any code to take
 advantage of this.
 
