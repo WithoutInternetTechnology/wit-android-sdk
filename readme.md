@@ -16,28 +16,22 @@ Official WIT Android SDK to support:
 
 ## Something to keep in mind
 
-In this phase WIT SDK supports "generic requests" meaning that
+In the current version WIT SDK supports "generic requests" meaning that
 you can throw(1) any kind of data to any url of choice which can result
 in a big payload being sent via SMS.
-Our system take care of compressing and optimizing the request you are doing,
-but this doesn't mean that the payload will be short,
-what we suggest is to take a look at your endpoints and simplify your data where you can.
-This will have a big impact on the speed of the communications between the offline 
-device and the server.
+Our system take care of compressing and optimizing the request you are doing.
 
-Here at [WIT Technology](https://www.witsdk.com) we offer a premium support to any company who want to improve
-the speed of the requests and to lower the prices for the data transportation.
+Here at [WIT Technology](https://www.witsdk.com) we offer a premium support to any company.
+We can optimize up to 50% the speed of the requests and as a consequence the prices for the data transportation.
 Your endpoints will remain the same so you don't have to modify any code to take
 advantage of this.
 
 1) we support all HTTP Requests Verbs -> get|post|put|patch|delete
 
-
 ## Contact US
 
 For any technical issue create it [here](https://github.com/WithoutInternetTechnology/wit-android-sdk/issues) or contact us at davide [ at ] witsdk.com.
 For business operations, and to know more about our Premium Support write to alessio [ at ] witsdk.com.
-
 
 # Install
 
