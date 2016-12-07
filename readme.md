@@ -4,12 +4,6 @@
 
 *Please be patient :) this is a very early SDK*
 
-## Issues
-
-Use Github Issues to file bugs and weird problems.
-
-# WIT Android SDK
-
 WIT Android SDK is a library to give fallback connectivity to mobile Apps.
 Using WIT SDK you can do any kind of HTTP Requests.
 If the device is offline, the SMS Channel will be used.
@@ -20,7 +14,36 @@ Official WIT Android SDK to support:
 - Offline HTTP Requests via WIT Fallback on SMS
 - Android 5 and 6
 
-## Install
+## Something to keep in mind
+
+In this phase WIT SDK supports "generic requests" meaning that
+you can throw(1) any kind of data to any url of choice which can result
+in a big payload being sent via SMS.
+Our system take care of compressing and optimizing the request you are doing,
+but this doesn't mean that the payload will be short,
+what we suggest is to take a look at your endpoints and simplify your data where you can.
+This will have a big impact on the speed of the communications between the offline 
+device and the server.
+
+Here at [WIT Technology](https://www.witsdk.com) we offer a premium support to any company who want to improve
+the speed of the requests and to lower the prices for the data transportation.
+Your endpoints will remain the same so you don't have to modify any code to take
+advantage of this.
+
+1) we support all HTTP Requests Verbs -> get|post|put|patch|delete
+
+
+## Contact US
+
+For any technical issue create it [here](https://github.com/WithoutInternetTechnology/wit-android-sdk/issues) or contact us at davide [ at ] witsdk.com.
+For business operations, and to know more about our Premium Support write to alessio [ at ] witsdk.com.
+
+
+# Install
+
+### Prerequisites
+
+WIT SDK needs [okHttp3](https://github.com/square/okhttp) to work.
 
 ### Setup WIT SDK using Android Studio
 The easiest way to install WIT SDK is to use the Android Studio Module import section,
