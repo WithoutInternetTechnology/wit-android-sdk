@@ -63,7 +63,7 @@ in order to do that:
 ```java
     dependencies {
         compile fileTree(include: ['*.aar'], dir: 'witsdk')
- 
+
         ...
         compile 'com.squareup.okhttp3:okhttp:3.4.2'
         compile project(':witsdk')
@@ -176,6 +176,31 @@ Here some example to get you started on the WIT Android SDK.
 ### DELETE Request
 ```java
     client.request(url, "delete", null, activity, new RequestListener() {
+        @Override
+        public void onSuccess(JSONObject json, Integer id) {
+            Log.d("WIT SDK","DELETE REQUEST, Response: "+ id.toString() +" : " + json.toString());
+        }
+
+        @Override
+        public void onError(int code, String error) {
+            Log.d("WIT SDK","DELETE REQUEST, Error: "+ code +" : " + error);
+        }
+    });
+```
+
+### Add HEADERS to your Request
+
+Initialize a Map variable
+
+```java
+  final Map<String, String> headers = new HashMap<String, String>() {{
+        put("auth", "Password");
+        put("Bearer ", "auth_token");
+    }};
+```
+
+```java
+    client.request(url, "post", headers, obj, activity, new RequestListener() {
         @Override
         public void onSuccess(JSONObject json, Integer id) {
             Log.d("WIT SDK","DELETE REQUEST, Response: "+ id.toString() +" : " + json.toString());
