@@ -90,7 +90,7 @@ in order to do that:
     obj.put("body", "bar");
     obj.put("userId", 1);
 
-    String url = "http://jsonplaceholder.typicsode.com/posts/1";
+    String url = "http://jsonplaceholder.typicode.com/posts/1";
     String method = "patch";
     final Activity activity = this;
 ```
