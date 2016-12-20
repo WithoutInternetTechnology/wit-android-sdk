@@ -203,12 +203,12 @@ Initialize a Map variable
     client.request(url, "post", headers, obj, activity, new RequestListener() {
         @Override
         public void onSuccess(JSONObject json, Integer id) {
-            Log.d("WIT SDK","DELETE REQUEST, Response: "+ id.toString() +" : " + json.toString());
+            Log.d("WIT SDK","POST REQUEST, Response: "+ id.toString() +" : " + json.toString());
         }
 
         @Override
         public void onError(int code, String error) {
-            Log.d("WIT SDK","DELETE REQUEST, Error: "+ code +" : " + error);
+            Log.d("WIT SDK","POST REQUEST, Error: "+ code +" : " + error);
         }
     });
 ```
