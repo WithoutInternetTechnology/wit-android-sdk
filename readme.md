@@ -57,7 +57,7 @@ in order to do that:
 
 ### Setup WIT SDK using Gradle
 
-1. Clone this repository in your project root folder,
+1. Clone this repository and move the folder 'witsdk' in your project root folder,
 2. In the build.gradle inside your 'app' folder, add WIT SDK and okHttp3:
 
 ```java
