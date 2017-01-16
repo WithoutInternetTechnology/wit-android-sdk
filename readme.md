@@ -57,7 +57,7 @@ in order to do that:
 
 ### Setup WIT SDK using Gradle
 
-1. Clone this repository and move the folder 'witsdk' in your project root folder,
+1. Clone this repository in your project root folder,
 2. In the build.gradle inside your 'app' folder, add WIT SDK and okHttp3:
 
 ```java
@@ -82,7 +82,39 @@ in order to do that:
 
     import com.witsdk.witcore.Wit;
 
-### Initialize variables
+### Initialize WIT
+It's recommended to use the same instance ```client``` of the WIT library in the same activity.
+The constructor ```new Wit(Activity this,FragmentManager fm); ``` takes 2 parameters: ```Activity```  and ```FragmentManager```, this is needed because WIT will handle automatically the permission flow required to use SMS in your app.
+
+```java
+public class MyActivity extends AppCompatActivity{
+    private Wit client;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ....
+        FragmentManager fm = getSupportFragmentManager();
+        client = new Wit(this, fm);
+        ...
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        client.onActivityResult(requestCode);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        client.onRequestPermissionsResult();
+    }
+```
+
+The  ```Activity``` need to override  ```onActivityResult()``` and ```onRequestPermissionsResult()``` has shown in the snipplet above, by doing this the ```Activity``` will be able to intercept the result of asking for SMS permission and communicate the result to ```(Wit) client```.
+
+### Your first request
+The http request below will be resolved either using internet or without, providing a consistet way for developer to fetch the data they need without having to worry if the device has internet connectivity.
+
 ```java
     JSONObject obj = new JSONObject();
     obj.put("id", 1);
@@ -90,15 +122,8 @@ in order to do that:
     obj.put("body", "bar");
     obj.put("userId", 1);
 
-    String url = "http://jsonplaceholder.typicode.com/posts/1";
-    String method = "patch";
-    final Activity activity = this;
-```
-
-### Initialize WIT and do the Request
-
-```java
-    Wit client = new Wit(this);
+    String url = "http://jsonplaceholder.typicsode.com/posts/1";
+    String method = "get";
 
     client.request(url, method, obj, activity, new RequestListener() {
       @Override
@@ -203,12 +228,12 @@ Initialize a Map variable
     client.request(url, "post", headers, obj, activity, new RequestListener() {
         @Override
         public void onSuccess(JSONObject json, Integer id) {
-            Log.d("WIT SDK","POST REQUEST, Response: "+ id.toString() +" : " + json.toString());
+            Log.d("WIT SDK","DELETE REQUEST, Response: "+ id.toString() +" : " + json.toString());
         }
 
         @Override
         public void onError(int code, String error) {
-            Log.d("WIT SDK","POST REQUEST, Error: "+ code +" : " + error);
+            Log.d("WIT SDK","DELETE REQUEST, Error: "+ code +" : " + error);
         }
     });
 ```

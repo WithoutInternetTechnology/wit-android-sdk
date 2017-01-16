@@ -1,17 +1,22 @@
 package com.witsdk.wittestapplication;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.witsdk.witcore.RequestListener;
+import com.witsdk.witcore.WLog;
 import com.witsdk.witcore.Wit;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Wit client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
             Log.d("JSON", e.toString());
         }
         final Activity activity = this;
-        Wit client = new Wit(this);
+        FragmentManager fm = getSupportFragmentManager();
+        client = new Wit(this, fm);
 
         client.request("http://jsonplaceholder.typicode.com/posts", "post", obj, activity, new RequestListener() {
             @Override
@@ -41,5 +47,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        client.onActivityResult(requestCode);
+    }
+
+    /* NOTE
+    *  This fuction is not triggered by changeDefaultAppSms
+    * */
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        client.onRequestPermissionsResult();
     }
 }
