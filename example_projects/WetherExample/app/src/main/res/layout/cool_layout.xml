@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="30dp"
+    android:weightSum="1">
+
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="110dp"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:layout_weight="0.02">
+
+        <EditText
+            android:text="Amstedam"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/city"
+            android:layout_marginTop="35dp"
+            android:focusable="false"
+            android:textSize="28sp"
+            android:textStyle="normal|bold"
+            android:textColor="@android:color/background_light"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="Today"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/today"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="147dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7">
+
+
+            <TextView
+                android:text="-2°"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/temp"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/background_light"
+                android:textSize="35sp"
+                android:textAlignment="center"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/snow"
+                android:id="@+id/icon"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="Snow"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:id="@+id/desc"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"
+                android:gravity="center_vertical|right"
+                android:textAlignment="center" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:gravity="center_vertical"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/sunrise"
+                android:id="@+id/imageView3" />
+
+            <TextView
+                android:text="05:58 AM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sunset"
+                android:textColor="@android:color/background_light"
+                android:textSize="12sp"
+                android:gravity="center_vertical|right"
+                android:textAlignment="center" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/sunset"
+                android:id="@+id/imgSunset" />
+
+            <TextView
+                android:text="8:20 PM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sunrise"
+                android:textColor="@android:color/background_light"
+                android:textSize="12sp"
+                android:gravity="center_vertical|right"
+                android:textAlignment="center" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:text="Change city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/changeCity"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginTop="40dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="22dp"
+                android:text="This demo uses WITsdk"
+                android:layout_alignParentTop="true"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:text="This demo app shows WIT sdk fetching information from the Open Weather Api without 3g or WiFi. \n\n Find more in www.witsdk.com"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/textView"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:text="Reload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/reload"
+        android:layout_weight="0.02"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:text="exit offline mode "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/restoreSMSdefault"
+        android:layout_weight="0.02"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/colorPrimary" />
+
+
+</LinearLayout>
