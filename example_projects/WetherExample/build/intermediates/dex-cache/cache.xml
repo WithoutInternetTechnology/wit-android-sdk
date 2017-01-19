@@ -34,7 +34,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="e432b86c6ea7dd1415ed78497e4c232cb10d5b27">
+        sha1="67fe2b1eae3b92b41726a3801b059f1cde3b1fbd">
         <dex dex="/Users/alexintosh/Code/wit/production/wit-android-sdk/example_projects/WetherExample/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_bdc277d0974ce521a48792416d7d11dfb6b87755/classes.dex" />
     </item>
     <item
@@ -52,7 +52,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="3dab7a335611a19c54c44f608bf99269d2b51f9c">
+        sha1="9a958edbe502a7d5482ccdfc2ef525f5b1f07e76">
         <dex dex="/Users/alexintosh/Code/wit/production/wit-android-sdk/example_projects/WetherExample/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d61601039a546e9d98f1d283477da828a0fc3a66/classes.dex" />
     </item>
     <item
