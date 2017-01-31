@@ -14,7 +14,7 @@ Official WIT Android SDK to support:
 - Offline HTTP Requests via WIT Fallback on SMS
 - Android 5 and 6
 
-## Something to keep in mind
+## Generic http offline request
 
 In the current version WIT SDK supports "generic requests" meaning that
 you can throw(1) any kind of data to any url of choice which can result
@@ -32,6 +32,14 @@ advantage of this.
 
 For any technical issue create it [here](https://github.com/WithoutInternetTechnology/wit-android-sdk/issues) or contact us at davide [ at ] witsdk.com.
 For business operations, and to know more about our Premium Support write to alessio [ at ] witsdk.com.
+
+## Example
+### [Weather Example using WIT SDK](https://github.com/WithoutInternetTechnology/wit-android-sdk/tree/master/example_projects/WetherExample)
+#### A simple weather app that works without internet
+<img src="example_projects/WetherExample/screenshoots/1.png" width="200"/>
+<img src="example_projects/WetherExample/screenshoots/2.png" width="200"/>
+<img src="example_projects/WetherExample/screenshoots/3.png" width="200"/>
+<img src="example_projects/WetherExample/screenshoots/4.png" width="200"/>
 
 # Install
 
