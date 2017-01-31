@@ -68,6 +68,12 @@ in order to do that:
 1. Clone this repository in your project root folder,
 2. In the build.gradle inside your 'app' folder, add WIT SDK and okHttp3:
 
+```bash
+cd YourProject
+git clone https://github.com/WithoutInternetTechnology/wit-android-sdk.git
+cp -r ./wit-android-sdk/witsdk witsdk
+```
+
 ```java
     dependencies {
         compile fileTree(include: ['*.aar'], dir: 'witsdk')
