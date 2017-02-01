@@ -65,14 +65,15 @@ in order to do that:
 
 ### Setup WIT SDK using Gradle
 
-1. Clone this repository in your project root folder,
-2. In the build.gradle inside your 'app' folder, add WIT SDK and okHttp3:
+1. Clone this repository in your project root folder and execute these commands:
 
 ```bash
 cd YourProject
 git clone https://github.com/WithoutInternetTechnology/wit-android-sdk.git
 cp -r ./wit-android-sdk/witsdk witsdk
 ```
+
+2. In the build.gradle inside your 'app' folder, add WIT SDK and okHttp3:
 
 ```java
     dependencies {
@@ -94,7 +95,7 @@ cp -r ./wit-android-sdk/witsdk witsdk
 
 ### Import the WIT SDK
 
-    import com.witsdk.witcore.Wit;
+    import com.witsdk.witcore.*;
 
 ### Initialize WIT
 It's recommended to use the same instance ```client``` of the WIT library in the same activity.
@@ -126,20 +127,14 @@ public class MyActivity extends AppCompatActivity{
 
 The  ```Activity``` need to override  ```onActivityResult()``` and ```onRequestPermissionsResult()``` has shown in the snipplet above, by doing this the ```Activity``` will be able to intercept the result of asking for SMS permission and communicate the result to ```(Wit) client```.
 
-### Your first request
+### GET Request
 The http request below will be resolved either using internet or without, providing a consistet way for developer to fetch the data they need without having to worry if the device has internet connectivity.
 
 ```java
-    JSONObject obj = new JSONObject();
-    obj.put("id", 1);
-    obj.put("title", "foo");
-    obj.put("body", "bar");
-    obj.put("userId", 1);
 
     String url = "http://jsonplaceholder.typicsode.com/posts/1";
-    String method = "get";
-
-    client.request(url, method, obj, activity, new RequestListener() {
+    Activity activity = this;
+    client.request(url, "get", obj, activity, new RequestListener() {
       @Override
       public void onSuccess(JSONObject json, Integer id) {
         Log.d("WIT REQ","RESPONSE "+ id.toString() +" : " + json.toString());
@@ -151,27 +146,15 @@ The http request below will be resolved either using internet or without, provid
       }
     });
 ```
-## Examples
-
-Here some example to get you started on the WIT Android SDK.
-
-### GET Request
-```java
-    client.request(url, "get", null, activity, new RequestListener() {
-        @Override
-        public void onSuccess(JSONObject json, Integer id) {
-            Log.d("WIT SDK","GET REQUEST, Response: "+ id.toString() +" : " + json.toString());
-        }
-
-        @Override
-        public void onError(int code, String error) {
-            Log.d("WIT SDK","GET REQUEST, Error: "+ code +" : " + error);
-        }
-    });
-```
-
 ### POST Request
 ```java
+
+    JSONObject obj = new JSONObject();
+    obj.put("id", 1);
+    obj.put("title", "foo");
+    obj.put("body", "bar");
+    obj.put("userId", 1);
+    Activity activity = this;
     client.request("http://jsonplaceholder.typicode.com/posts", "post", obj, activity, new RequestListener() {
         @Override
         public void onSuccess(JSONObject json, Integer id) {
@@ -186,6 +169,7 @@ Here some example to get you started on the WIT Android SDK.
 ```
 ### PUT Request
 ```java
+    Activity activity = this;
     client.request(url, "put", obj, activity, new RequestListener() {
         @Override
         public void onSuccess(JSONObject json, Integer id) {
@@ -200,6 +184,7 @@ Here some example to get you started on the WIT Android SDK.
 ```
 ### PATCH Request
 ```java
+    Activity activity = this;
     client.request(url, "patch", obj, activity, new RequestListener() {
         @Override
         public void onSuccess(JSONObject json, Integer id) {
@@ -214,6 +199,7 @@ Here some example to get you started on the WIT Android SDK.
 ```
 ### DELETE Request
 ```java
+    Activity activity = this;
     client.request(url, "delete", null, activity, new RequestListener() {
         @Override
         public void onSuccess(JSONObject json, Integer id) {
@@ -252,6 +238,14 @@ Initialize a Map variable
     });
 ```
 
+### Disable Offline Mode
+
+This function will trigger the system dialog to restore the default SMS app selected before switching to Offline Mode.
+```java
+    client.disableOfflineMode();
+```
+
+Initialize a Map variable
 ### License
 
 Copyright (C) WIT Technology, LTD - All Rights Reserved
