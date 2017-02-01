@@ -47,22 +47,6 @@ For business operations, and to know more about our Premium Support write to ale
 
 WIT SDK needs [okHttp3](https://github.com/square/okhttp) to work.
 
-### Setup WIT SDK using Android Studio
-The easiest way to install WIT SDK is to use the Android Studio Module import section,
-in order to do that:
-
-- Clone this repository in your computer
-- Go to File>New>New Module
-- Select "Import .JAR/.AAR Package" and click next.
-- Enter the path to .aar file and click finish.
-- Go to File>Project Settings (Ctrl+Shift+Alt+S).
-- Under "Modules," in left menu, select "app."
-- Go to "Dependencies tab.
-- Click the green "+" in the upper right corner.
-- Select "Module Dependency"
-- Select the new module from the list.
-
-
 ### Setup WIT SDK using Gradle
 
 1. Clone this repository in your project root folder and execute these commands:
@@ -245,7 +229,6 @@ This function will trigger the system dialog to restore the default SMS app sele
     client.disableOfflineMode();
 ```
 
-Initialize a Map variable
 ### License
 
 Copyright (C) WIT Technology, LTD - All Rights Reserved
