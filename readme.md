@@ -1,6 +1,6 @@
 ![alt tag](https://raw.githubusercontent.com/WithoutInternetTechnology/wit-android-sdk/master/android-sdk%20banner.png)
 
-# WIT Android SDK *alpha* 0.1.0
+# WIT Android SDK *alpha* 0.5.0
 
 *Please be patient :) this is a very early SDK*
 
@@ -12,7 +12,7 @@ Official WIT Android SDK to support:
 
 - Internet backed HTTP Requests based on okHTTP
 - Offline HTTP Requests via WIT Fallback on SMS
-- Android 5 and 6
+- Android 4.4 (Api 19), 5 and 6
 
 ## Generic http offline request
 
