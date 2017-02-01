@@ -49,7 +49,7 @@ WIT SDK needs [okHttp3](https://github.com/square/okhttp) to work.
 
 ### Setup WIT SDK using Gradle
 
-1. Clone this repository in your project root folder and execute these commands:
+Clone this repository in your project root folder and execute these commands:
 
 ```bash
 cd YourProject
@@ -57,7 +57,7 @@ git clone https://github.com/WithoutInternetTechnology/wit-android-sdk.git
 cp -r ./wit-android-sdk/witsdk witsdk
 ```
 
-2. In the build.gradle inside your 'app' folder, add WIT SDK and okHttp3:
+In the build.gradle inside your 'app' folder, add WIT SDK and okHttp3:
 
 ```java
     dependencies {
@@ -69,7 +69,7 @@ cp -r ./wit-android-sdk/witsdk witsdk
     }
 ```
 
-3. Inside your settings.gradle add ':witsdk', the file should look like:
+Inside your settings.gradle add ':witsdk', the file should look like:
 
 ```java
     include ':app',':witsdk'
