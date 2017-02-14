@@ -1,13 +1,24 @@
 package test.wit_native.com.weather;
 
 import android.app.Activity;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.zip.GZIPInputStream;
+
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v4.app.FragmentManager;
 import android.text.format.DateFormat;
+import android.util.Base64;
 import android.util.Log;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -19,14 +30,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.witsdk.witcore.GzipUtil;
 import com.witsdk.witcore.RequestListener;
+import com.witsdk.witcore.Settings;
 import com.witsdk.witcore.WLog;
 import com.witsdk.witcore.Wit;
+import com.witsdk.witcore.Witson;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -52,7 +69,6 @@ public class DisplayWeather extends AppCompatActivity
 
         setupUI();
 
-
         //Other Stuff
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -70,12 +86,15 @@ public class DisplayWeather extends AppCompatActivity
         Button restoreSMSdefault = (Button) findViewById(R.id.restoreSMSdefault);
         Button reload = (Button) findViewById(R.id.reload);
         final EditText cityTv = (EditText) findViewById(R.id.city);
+        final Activity ctx = this;
+        //cityTv.setEnabled(false);
 
         setDate();
 
         cityTv.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
+                WLog.d("TOUCH");
                 cityTv.setFocusable(true);
                 cityTv.setFocusableInTouchMode(true);
                 changeCityBtn.setVisibility(View.VISIBLE);
@@ -110,6 +129,7 @@ public class DisplayWeather extends AppCompatActivity
         changeCityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //cityTv.setEnabled(false);
                 city = cityTv.getText().toString();
                 hideSoftKeyboard(DisplayWeather.this, view);
                 changeCityBtn.setVisibility(View.GONE);
@@ -144,9 +164,8 @@ public class DisplayWeather extends AppCompatActivity
     public void getWeather() throws JSONException {
 
         String url = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID=3563427d4664d99a125c8c163a593faa&units=metric";
-        final Activity activity = this;
 
-        client.request(url, "get", null, activity, new RequestListener() {
+        client.request(url, "get", null, new RequestListener() {
             @Override
             public void onSuccess(JSONObject json, Integer id) {
 
@@ -233,7 +252,7 @@ public class DisplayWeather extends AppCompatActivity
                 break;
         }
 
-        WLog.d("UI Updated");
+        WLog.d("UPDATED THE UI");
         cityTv.setText(city);
         tempTv.setText(temp);
         descTv.setText(desc);
@@ -243,22 +262,20 @@ public class DisplayWeather extends AppCompatActivity
 
 
     /* NOTE
-    * The Activity need to override onActivityResult() by doing this
-    * the Activity will be able to intercept the result of asking
-    * for SMS permission and communicate the result to (Wit) client.
+    *  This fuction is triggered only when default permission are requested
     * */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d("onActivityResult", ""+requestCode);
         client.onActivityResult(requestCode);
     }
 
     /* NOTE
-    * The Activity need to override onRequestPermissionsResult()
-    * by doing this the Activity will be able to intercept the result of asking
-    * for SMS permission and communicate the result to (Wit) client.
+    *  This fuction is not triggered by changeDefaultAppSms
     * */
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        WLog.d("onRequestPermissionsResult");
         client.onRequestPermissionsResult();
     }
 

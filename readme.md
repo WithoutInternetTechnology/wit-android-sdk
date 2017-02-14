@@ -1,6 +1,6 @@
 ![alt tag](https://raw.githubusercontent.com/WithoutInternetTechnology/wit-android-sdk/master/android-sdk%20banner.png)
 
-# WIT Android SDK *alpha* 0.5.0
+# WIT Android SDK *alpha* 0.6.0
 
 *Please be patient :) this is a very early SDK*
 
@@ -112,13 +112,13 @@ public class MyActivity extends AppCompatActivity{
 The  ```Activity``` need to override  ```onActivityResult()``` and ```onRequestPermissionsResult()``` has shown in the snipplet above, by doing this the ```Activity``` will be able to intercept the result of asking for SMS permission and communicate the result to ```(Wit) client```.
 
 ### GET Request
-The http request below will be resolved either using internet or without, providing a consistet way for developer to fetch the data they need without having to worry if the device has internet connectivity.
+The http request below will be resolved either using internet or without, providing a consistent way for developer to fetch the data they need without having to worry if the device has internet connectivity.
 
 ```java
 
     String url = "http://jsonplaceholder.typicsode.com/posts/1";
-    Activity activity = this;
-    client.request(url, "get", obj, activity, new RequestListener() {
+
+    client.request(url, "get", null, new RequestListener() {
       @Override
       public void onSuccess(JSONObject json, Integer id) {
         Log.d("WIT REQ","RESPONSE "+ id.toString() +" : " + json.toString());
@@ -138,8 +138,8 @@ The http request below will be resolved either using internet or without, provid
     obj.put("title", "foo");
     obj.put("body", "bar");
     obj.put("userId", 1);
-    Activity activity = this;
-    client.request("http://jsonplaceholder.typicode.com/posts", "post", obj, activity, new RequestListener() {
+
+    client.request("http://jsonplaceholder.typicode.com/posts", "post", obj, new RequestListener() {
         @Override
         public void onSuccess(JSONObject json, Integer id) {
             Log.d("WIT SDK","POST REQUEST, Response: "+ id.toString() +" : " + json.toString());
@@ -153,8 +153,7 @@ The http request below will be resolved either using internet or without, provid
 ```
 ### PUT Request
 ```java
-    Activity activity = this;
-    client.request(url, "put", obj, activity, new RequestListener() {
+    client.request(url, "put", obj, new RequestListener() {
         @Override
         public void onSuccess(JSONObject json, Integer id) {
             Log.d("WIT SDK","PUT REQUEST, Response: "+ id.toString() +" : " + json.toString());
@@ -168,8 +167,7 @@ The http request below will be resolved either using internet or without, provid
 ```
 ### PATCH Request
 ```java
-    Activity activity = this;
-    client.request(url, "patch", obj, activity, new RequestListener() {
+    client.request(url, "patch", obj, new RequestListener() {
         @Override
         public void onSuccess(JSONObject json, Integer id) {
             Log.d("WIT SDK","PATCH REQUEST, Response: "+ id.toString() +" : " + json.toString());
@@ -183,8 +181,7 @@ The http request below will be resolved either using internet or without, provid
 ```
 ### DELETE Request
 ```java
-    Activity activity = this;
-    client.request(url, "delete", null, activity, new RequestListener() {
+    client.request(url, "delete", null, new RequestListener() {
         @Override
         public void onSuccess(JSONObject json, Integer id) {
             Log.d("WIT SDK","DELETE REQUEST, Response: "+ id.toString() +" : " + json.toString());
@@ -209,7 +206,7 @@ Initialize a Map variable
 ```
 
 ```java
-    client.request(url, "post", headers, obj, activity, new RequestListener() {
+    client.request(url, "post", headers, obj, new RequestListener() {
         @Override
         public void onSuccess(JSONObject json, Integer id) {
             Log.d("WIT SDK","DELETE REQUEST, Response: "+ id.toString() +" : " + json.toString());
