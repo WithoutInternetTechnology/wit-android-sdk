@@ -52,7 +52,7 @@
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="fe7e2b7273b32009f50ebe31f0657b851e380598">
+        sha1="03d12ee87f4f339d89cbc0fd45766455472661e7">
         <dex dex="/Users/alexintosh/Code/wit/production/wit-android-sdk/example_projects/WetherExample/app/build/intermediates/pre-dexed/debug/WetherExample-witsdk-unspecified_46053697264abf573801b07d98a066bf4d294a6d.jar" />
     </item>
     <item
