@@ -1,6 +1,6 @@
 ![alt tag](https://raw.githubusercontent.com/WithoutInternetTechnology/wit-android-sdk/master/android-sdk%20banner.png)
 
-# WIT Android SDK *alpha* 0.6.0
+# WIT Android SDK *alpha* 0.7.0
 
 *Please be patient :) this is a very early SDK*
 
