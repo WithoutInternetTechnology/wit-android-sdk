@@ -111,6 +111,32 @@ public class MyActivity extends AppCompatActivity{
 
 The  ```Activity``` need to override  ```onActivityResult()``` and ```onRequestPermissionsResult()``` has shown in the snipplet above, by doing this the ```Activity``` will be able to intercept the result of asking for SMS permission and communicate the result to ```(Wit) client```.
 
+### Check if the device is connected to the internet.
+```java
+boolean isConnected = client.checkInternetConnection();
+```
+
+### OFFLINE-ONLY Request
+In order to offer complete flexibility for the developer, this method will perform offline-only request, it will be processed via SMS even if the device has internet connectivity.
+You can check if the device is connected to the internet by using ```client.checkInternetConnection()```.
+
+```java
+
+    String url = "http://jsonplaceholder.typicsode.com/posts/1";
+
+    client.offline_request(url, "get", null, new RequestListener() {
+      @Override
+      public void onSuccess(JSONObject json, Integer id) {
+        Log.d("WIT REQ","RESPONSE "+ id.toString() +" : " + json.toString());
+      }
+
+      @Override
+      public void onError(int code, String error) {
+        Log.d("WIT REQ","ERROR "+ code +" : " + error);
+      }
+    });
+```
+
 ### GET Request
 The http request below will be resolved either using internet or without, providing a consistent way for developer to fetch the data they need without having to worry if the device has internet connectivity.
 
